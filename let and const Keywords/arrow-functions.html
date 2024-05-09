@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <p id="arrow"></p>
+    <button id="arrow-click">clichiiiiiik</button>
+
+    <script>
+    let hello = "";
+    
+    hello = () => { 
+        document.getElementById("arrow").innerHTML = "Hello World!" 
+
+    }
+    
+    document.getElementById("arrow-click").addEventListener('click',hello) 
+    // = hello();
+    </script>
+</body>
+
+</html>
