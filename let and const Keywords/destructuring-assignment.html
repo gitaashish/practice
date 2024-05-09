@@ -7,7 +7,56 @@
 
 <body>
 
-   
+    <p id="demo"></p>
+
+    <script>
+        // example 1
+        const vehicleOne = {
+            brand: 'Ford',
+            model: 'Mustang',
+            type: 'car',
+            year: 2021,
+            color: 'red'
+        }
+
+        myVehicle(vehicleOne);
+
+        function myVehicle({ type, color, brand, model }) {
+            const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+
+            document.getElementById("demo").innerHTML = message;
+        }
+
+
+
+
+        // example 2
+
+
+        let arr = ["John", "Smith", "Smith1", "Smith2", "Smith3"]
+
+     
+        // let [firstName, surname] = arr;
+        for (let key in arr) {
+            alert(arr[key]); // John
+            // console.log(value);
+        }
+
+
+
+        // example 3
+        
+        let arr1 = [2, 3, 6, 9, 5, 0, 3, 3, 0, 5, 0]
+        let [a, b, c, d, e, ...rest] = arr1
+
+        console.log(a, b, c, d, e, rest);
+
+
+    </script>
 </body>
 
 </html>
+
+
+
+<!-- explain youtube video link:- https://www.youtube.com/watch?v=_BsE5kmJk6Q -->
