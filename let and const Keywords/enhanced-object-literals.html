@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
 </head>
+
 <body>
 
-<h1>Product List</h1>
+  <h1>Product List</h1>
 
-<table id="product-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Category</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Product rows will be dynamically added here -->
-  </tbody>
-</table>
+  <table id="product-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
 
-<script>
+    </tbody>
+  </table>
+
+  <script>
     // Array of product objects
-const products = [
-  { name: 'Laptop', price: 999, category: 'Electronics' },
-  { name: 'Smartphone', price: 599, category: 'Electronics' },
-  { name: 'T-shirt', price: 25, category: 'Clothing' },
-  { name: 'Running Shoes', price: 89, category: 'Footwear' },
-];
+    const products = [
+      { name: 'Laptop', price: 999, category: 'Electronics' },
+      { name: 'Smartphone', price: 599, category: 'Electronics' },
+      { name: 'T-shirt', price: 25, category: 'Clothing' },
+      { name: 'Running Shoes', price: 89, category: 'Footwear' },
+    ];
 
-// Function to dynamically render product table
-function renderProducts() {
-  const tableBody = document.querySelector('#product-table tbody');
-
-  // Clear existing table rows
-  tableBody.innerHTML = '';
-
-  // Iterate over each product and create table rows
-  products.forEach(product => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
+    function renderProducts() {
+      const tableBody = document.querySelector('#product-table tbody');
+      tableBody.innerHTML = '';
+      
+      products.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
       <td>${product.name}</td>
       <td>$${product.price}</td>
       <td>${product.category}</td>
     `;
-    tableBody.appendChild(row);
-  });
-}
+        tableBody.appendChild(row);
+      });
+    }
 
-// Call renderProducts function to initially render products
-renderProducts();
+    // Call renderProducts function to initially render products
+    renderProducts();
 
-</script>
+  </script>
 </body>
+
 </html>
