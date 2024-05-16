@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes(Class Templates Only)</title>
+</head>
+
+<body>
+    <script>
+        // Define the Shape class template
+        class Shape {
+            constructor(name) {
+                this.name = name;
+            }
+
+            // Method to calculate area (to be implemented by subclasses)
+            area() {
+                throw new Error('Method not implemented');
+            }
+
+            // Method to calculate perimeter (to be implemented by subclasses)
+            perimeter() {
+                throw new Error('Method not implemented');
+            }
+
+            // Method to display info about the shape
+            displayInfo() {
+                console.log(`Name: ${this.name}`);
+                console.log(`Area: ${this.area()}`);
+                console.log(`Perimeter: ${this.perimeter()}`);
+            }
+        }
+
+        // Define a subclass Circle
+        class Circle extends Shape {
+            constructor(name, radius) {
+                super(name);
+                this.radius = radius;
+            }
+
+            // Implement area method for Circle
+            area() {
+                return Math.PI * this.radius ** 2;
+            }
+
+            // Implement perimeter method for Circle
+            perimeter() {
+                return 2 * Math.PI * this.radius;
+            }
+        }
+
+        // Define a subclass Rectangle
+        class Rectangle extends Shape {
+            constructor(name, width, height) {
+                super(name);
+                this.width = width;
+                this.height = height;
+            }
+
+            // Implement area method for Rectangle
+            area() {
+                return this.width * this.height;
+            }
+
+            // Implement perimeter method for Rectangle
+            perimeter() {
+                return 2 * (this.width + this.height);
+            }
+        }
+
+        // Create instances of Circle and Rectangle
+        const circle = new Circle('Circle', 5);
+        const rectangle = new Rectangle('Rectangle', 4, 6);
+
+        // Display info about the shapes
+        console.log("Circle Info:");
+        circle.displayInfo();
+        console.log("\nRectangle Info:");
+        rectangle.displayInfo();
+
+    </script>
+</body>
+
+</html>
